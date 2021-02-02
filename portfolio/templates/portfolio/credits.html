@@ -1,0 +1,21 @@
+{% extends 'portfolio/base.html' %}
+{% block content%}
+{% load static %}
+
+    <section class="intro">
+            <article class="intro-article-credits">
+                <h2>Credits:</h2>
+                <p>For educational purposes only.</p>
+                <p>Some text content and images from the <a href="https://borderlands.fandom.com/">Borderlands Wiki</a></p>
+            </article>
+        </section>
+        <section class="featured-credits">
+            <article class="feature-credits">
+                <figure>
+                    <img src="{% static 'portfolio/images/credits.jpg'%}" alt="Borderlands 3 Characters">
+                </figure>
+            </article>
+        </section>
+
+
+{% endblock %}

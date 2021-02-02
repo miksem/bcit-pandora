@@ -1,0 +1,51 @@
+
+
+{% extends 'portfolio/base.html' %}
+{% block content %}
+{% load static %}
+
+<!--<div class="container text-center">
+    <h1>This is the home page of Pandora</h1>
+</div>
+
+
+<a href="{% url 'blog:all_blogs'%}">Blog</a> 
+<br>
+
+<a href="{% static '/portfolio/pdf/bl.pdf'%}">Pandora Book</a>
+
+<img src="{% static 'portfolio/images/welcome-to-pandora.jpg'%}">-->
+
+<section class="intro">
+    <article class="intro-article">
+        <h2>Welcome to Pandora!</h2>
+        <p>Pandora is the mysterious planet on which the story of all of the Borderlands games takes place. It is a barren, desolate world filled with dangerous creatures. Pandora's lone moon is named Elpis.</p>
+        <p>Built by Eridians as an eternal prison for Destroyer, Pandora has highly unusual features for a celestial body. Everything from aggressive fauna to unpredictable climate to sources of deadly mutations is specifically designed to attract, challenge, and at the same time repel conquerors, researchers and adventurers of all sorts. </p>
+    </article>
+</section>
+<section class="featured">
+
+{% for project in projects %}
+<article class="feature">
+    <figure>
+        <a href="{{ project.texturl }}"><img src="{{ project.image.url }}" alt="{{ project.img_alt }}"></a>
+    </figure>
+    <div class="feature-text">
+        <a href="{{ project.texturl }}"><h2>{{ project.title }}</h2></a>
+        {{ project.description|safe }}
+    </div>
+</article>
+
+
+<!--
+<h2>{{ project.title }}</h2>
+<p>{{ project.description|safe }}</p>
+<img src="{{ project.image.url }}">
+{% if project.url %}
+<a href="{{ project.url }}">Link</a>
+{% endif %}-->
+
+{% endfor %}
+
+</section>
+{% endblock %}

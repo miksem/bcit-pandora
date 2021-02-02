@@ -1,0 +1,33 @@
+{% extends 'portfolio/base.html' %}
+{% block content%}
+
+<section class="intro">
+     <article class="intro-article">
+        <h2>Geography</h2>
+        <p>The areas of Pandora encountered in the story consist of snowy or volcanic-ash-strewn mountainous areas, large desert valleys and coastal stretches. The terrain is criss-crossed with canyons, ravines, rocky outcrops and plateaus. Large bodies of water are also present bordering several of the zones. Due to the repeated presence of raised construction it is likely that many of these areas are much wetter environments during different times of the Pandoran year.</p>
+     </article>
+</section>
+<section class="featured-geo">
+
+{% for landscape in landscapes %}
+
+    <article class="feature-geo">
+        <figure>
+            <img src="{{ landscape.image.url }}" alt="{{ creature.image_alt}}">
+        </figure>
+        <div class="feature-text-geo">
+            <h2>{{ landscape.title }}</h2>
+            {{landscape.text|safe }}
+        </div>
+    </article>
+
+{% endfor %}
+
+</section>
+{% endblock %}
+
+
+{% comment %} {% for creature in creatures %}
+<!--<img src="{{ creature.image.url }}" alt="{{ creature.image_alt}}">
+<h2>{{ creature.title }}</h2>-->
+{% endfor%} {% endcomment %}

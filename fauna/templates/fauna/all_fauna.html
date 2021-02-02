@@ -1,0 +1,29 @@
+{% extends 'portfolio/base.html' %}
+{% block content%}
+
+<section class="intro">
+    <article class="intro-article">
+        <h2>Fauna</h2>
+        <p>The major forms of fauna on Pandora aggressively protect their territory; an approach is usually met with immediate attack. Pandora has many different creatures that are seldom friendly towards the Vault Hunters. These include skags, larva crab worms, scythid, spiderants, drifters, rakk, rakk hives, varkids, sand worms, bullymongs, threshers, boroks, scaylions, crystalisks, and many other dangerous creatures.</p>
+        <p>There are many undiscovered species on Pandora as well. Patricia Tannis also mentions there are many species of bugs. Some of these bugs are the glowing green flies seen when approaching a skag pile or toilets.</p>
+    </article>
+</section>
+<section class="featured-fauna">
+
+{% for creature in creatures %}
+            <article class="feature-fauna">
+                <figure>
+                    <img src="{{ creature.image.url }}" alt="{{ creature.image_alt}}">
+                </figure>
+                <div class="feature-text">
+                    <h2>{{ creature.title }}</h2>
+                </div>
+            </article>
+
+<!--<img src="{{ creature.image.url }}" alt="{{ creature.image_alt}}">
+<h2>{{ creature.title }}</h2>-->
+{% endfor%}
+
+
+</section>
+{% endblock %}

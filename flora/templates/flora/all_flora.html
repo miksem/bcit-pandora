@@ -1,0 +1,37 @@
+{% extends 'portfolio/base.html' %}
+{% block content%}
+    <section class="intro">
+        <article class="intro-article">
+            <h2>Flora</h2>
+            <p>There are a variety of plants on Pandora, although the local flora is sparse in many areas. The majority of the vegetation present is similar in appearance to flora found in the south-western United States. One of the most common plants or plant-analogues resembles cacti with orange glowing 'eyes' found throughout the desert-like environment of the Arid Badlands and beyond. This particular plant is possibly the "cesium cactus" referenced in the mission briefing for Big Game Hunter.</p>
+            <p>Other types of flora encountered include:
+                <ul>
+                    <li>Mushroom-like growths can be found in the Arid Badlands and many of the cave areas (probably used as food for local animals and human settlers).</li>
+                    <li>In the Rust Commons, there is some plant life, including moss-like plants on the ground and large, sunflower-style plants that grow with 3 heads (apparently dangerous to settlers). Lily-pads appear in the large pools of water. Wild grasses, weeds and flowers can be seen to bloom in small patches throughout the zones.</li>
+                    <li>Dead, blackened trees can be found on various parts of the world. This may be seasonal and they just haven't awoken yet. One is located in the town of New Haven.</li>
+                    <li>Bladeflower Plants can be found in Skag Gully and elsewhere. T.K. Baha asks the Vault hunters to collect the seeds from them. They are the main cash crop of Pandora and are edible.</li>
+                    <li>Some of the local plant life introduced in Borderlands 2 are actually dangerous. Firemelons are a prime example, as they explode when disturbed, setting everything around them on fire.</li>
+                </ul>
+            </p>
+        </article>
+    </section>
+
+    <section class="featured-flora">
+        <article class="feature-flora">
+            <div class="cycle-slideshow"
+            data-cycle-caption="#alt-caption"
+            data-cycle-caption-template="{{alt}}"
+            data-cycle-timeout="5000">
+            {% for plant in plants %}
+                <img src="{{ plant.image.url }}" alt="{{ plant.image_alt}}">
+            {% endfor %}    
+            </div>
+            <div id="alt-caption" class="flora-caption"></div>
+        </article>
+          
+    </section>
+{% endblock %}
+
+
+<!--<img src="{{ creature.image.url }}" alt="{{ creature.image_alt}}">
+<h2>{{ creature.title }}</h2>-->

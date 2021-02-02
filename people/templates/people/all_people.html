@@ -1,0 +1,36 @@
+{% extends 'portfolio/base.html' %}
+{% block content%}
+
+<section class="intro">
+    <article class="intro-article">
+        <h2>People</h2>
+        <p>Big corporations brought people in, then just abandoned them. It's easy to get to Pandora when your company deploys you there, and much harder to get off the place when you have to pay your own passage. Spaceships aren't cheap.</p>
+    </article>
+</section>
+<section class="featured-people">
+
+{% for person in people %}
+<div class="people-name">
+                <h2>{{person.title}}</h2>
+            </div>
+            <article class="feature-people">
+                <figure>
+                    <img src="{{ person.image.url}}" alt="{{person.image.url}}">
+                </figure>
+                <div class="feature-text-people">
+                    {{ person.text|safe}}
+                </div>
+            </article>
+
+{% endfor %}
+
+
+</section>
+
+{% endblock %}
+
+
+{% comment %} {% for creature in creatures %}
+<!--<img src="{{ creature.image.url }}" alt="{{ creature.image_alt}}">
+<h2>{{ creature.title }}</h2>-->
+{% endfor%} {% endcomment %}

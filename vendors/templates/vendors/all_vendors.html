@@ -1,0 +1,38 @@
+{% extends 'portfolio/base.html' %}
+{% block content%}
+
+        <section class="intro">
+            <article class="intro-article">
+                <h2>Manufacturers</h2>
+                <p>There are twelve official manufacturers in Borderlands, each with their own characteristics and trademarks. The manufacturers produce all of the offensive and defensive equipment encountered throughout the game. Each manufacturer also classifies weapons based on their strength.</p>
+           </article>
+        </section>
+        <section class="featured-vendors">
+            <table class="vendors-table">
+                <thead>
+                    <tr>
+                        <th colspan="2">Borderlands Vendors</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-header">
+                        <td>Manufacturer</td>
+                        <td>Description</td>
+                    </tr>
+                    {% for vendor in vendors %}
+                    <tr>
+                        <td class="table-row-header">{{vendor.title}}</td>
+                        <td>{{vendor.description}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+{% endblock %}
+
+
+{% comment %} {% for creature in creatures %}
+<!--<img src="{{ creature.image.url }}" alt="{{ creature.image_alt}}">
+<h2>{{ creature.title }}</h2>-->
+{% endfor%} {% endcomment %}
